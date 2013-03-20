@@ -3,7 +3,7 @@
 cd $OPENSHIFT_DATA_DIR
 
 nohup java -jar jetty-runner.jar \
-  --port $OPENSHIFT_INTERNAL_PORT
+  --port $OPENSHIFT_INTERNAL_PORT \
   --host $OPENSHIFT_INTERNAL_IP \
   webapps/root.war
 > $OPENSHIFT_DIY_LOG_DIR/jetty.log 2>&1 &
