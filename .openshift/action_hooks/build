@@ -10,10 +10,6 @@ JAVA_OPTS="-Djava.io.tmpdir=$TMP"
 rm -fr $TMP $TARGET
 mkdir -p $TMP $TARGET
 
-cd $WC_DIR
-unset GIT_DIR
-git pull -f
-
-cd $MODULE
+cd $WC_DIR/$MODULE
 ./sbt $JAVA_OPTS $OPENSHIFT_OPTS package
 cp target/scala*/*.war $TARGET/root.war
