@@ -1,5 +1,18 @@
 #!/bin/bash
-# This is a simple build script and will be executed on your CI system if 
-# available.  Otherwise it will execute while your application is stopped
-# before the deploy step.  This script gets executed directly, so it
-# could be python, php, ruby, etc.
+MODULE=scala_29/lift_basic
+WC_DIR=$OPENSHIFT_DATA_DIR/checkout
+TMP=$OPENSHIFT_DATA_DIR/tmp/sbt
+TARGET=$OPENSHIFT_DATA_DIR/target
+
+OPENSHIFT_OPTS="-Dsbt.ivy.home=${OPENSHIFT_DATA_DIR}.ivy2/ -Divy.home=${OPENSHIFT_DATA_DIR}.ivy2/ -Dsbt.boot.directory=${OPENSHIFT_DATA_DIR}"
+JAVA_OPTS="-Djava.io.tmpdir=$TMP"
+
+rm -fr $TMP $TARGET
+mkdir -p $TMP $TARGET
+
+cd $WC_DIR
+git pull
+
+cd $MODULE
+./sbt $JAVA_OPTS $OPENSHIFT_OPTS package
+cp target/scala*/*.war $TARGET/root.war
