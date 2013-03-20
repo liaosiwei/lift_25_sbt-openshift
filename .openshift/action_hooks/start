@@ -5,5 +5,9 @@ cd $OPENSHIFT_DATA_DIR
 nohup java -jar jetty-runner.jar \
   --port $OPENSHIFT_INTERNAL_PORT \
   --host $OPENSHIFT_INTERNAL_IP \
-  webapps/root.war
-> $OPENSHIFT_DIY_LOG_DIR/jetty.log 2>&1 &
+  --log $OPENSHIFT_DIY_LOG_DIR/request-yyyy_mm_dd.log \
+  --out $OPENSHIFT_DIY_LOG_DIR/jetty-yyyy_mm_dd.log \
+  --stats unsecure \
+  webapps/root.war \
+  > $OPENSHIFT_DIY_LOG_DIR/jetty.log 2>&1 &
+
