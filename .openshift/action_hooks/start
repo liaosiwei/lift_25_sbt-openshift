@@ -1,7 +1,7 @@
 #!/bin/bash
 JETTY_VERSION=9.0.0.v20130308
-JETTY_URL="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-runner/$JETTY_VERSION/$JETTY_RUNNER"
 JETTY_RUNNER="jetty-runner-$JETTY_VERSION.jar"
+JETTY_URL="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-runner/$JETTY_VERSION/$JETTY_RUNNER"
 
 cd $OPENSHIFT_DATA_DIR
 
