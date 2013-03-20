@@ -1,2 +1,7 @@
 #!/bin/bash
-mv $OPENSHIFT_DATA_DIR/target/root.war $OPENSHIFT_DATA_DIR/webapps
+TARGET=$OPENSHIFT_DATA_DIR/target
+WEBAPPS_DIR=$OPENSHIFT_DATA_DIR/webapps
+
+mkdir -p $WEBAPPS_DIR
+
+mv $TARGET/root.war $WEBAPPS_DIR
