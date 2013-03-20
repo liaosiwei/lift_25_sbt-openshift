@@ -11,6 +11,7 @@ rm -fr $TMP $TARGET
 mkdir -p $TMP $TARGET
 
 cd $WC_DIR
+unset GIT_DIR
 git pull
 
 cd $MODULE
