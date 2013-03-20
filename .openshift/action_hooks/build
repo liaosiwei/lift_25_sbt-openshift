@@ -12,7 +12,7 @@ mkdir -p $TMP $TARGET
 
 cd $WC_DIR
 unset GIT_DIR
-git pull
+git pull -f
 
 cd $MODULE
 ./sbt $JAVA_OPTS $OPENSHIFT_OPTS package
