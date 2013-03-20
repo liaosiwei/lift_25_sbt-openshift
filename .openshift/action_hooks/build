@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 MODULE=scala_29/lift_basic
 WC_DIR=$OPENSHIFT_DATA_DIR/checkout
 TMP=$OPENSHIFT_DATA_DIR/tmp/sbt
