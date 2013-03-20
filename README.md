@@ -8,14 +8,14 @@ This repository contains templates for Lift projects with Openshift build/deploy
 2. From Openshift Management console create a new application.
 3. Type of application: `Do-It-Yourself`.
 4. Choose `App name`.
-5. In `Source Code` section put: `git://github.com/tzeman77/lift_25_sbt.git`.
-6. Leave other options default.
-7. Do `Create Application`.
-8. After a while, the application should be accessible.
+5. Do `Create Application`.
+6. Clone application repository as per Openshift instructions.
+7. In the cloned repository, do: `git pull git@github.com:tzeman77/lift_25_sbt-openshift master`.
+8. Review the changes, possibly resolve conflicts.
+9. Publish repository: `git push origin master`.
+10. After a while, the application should be accessible.
 
 Note: the last step can take few minutes as the build/deployment scripts download sbt, libraries, jetty-runner and build the whole webapp from scratch.
-
-You can then hack on the repository as per Openshift instructions.
 
 ------------------------------------------------------------------------------------
 
