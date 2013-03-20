@@ -2,5 +2,8 @@
 WC_DIR=$OPENSHIFT_DATA_DIR/checkout
 
 unset GIT_DIR
+
 [ -d $WC_DIR/.git ] || git clone $HOME/git/OPENSHIFT_APP_NAME.git $WC_DIR
+
+cd $WC_DIR
 git pull -f
