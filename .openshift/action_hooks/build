@@ -11,5 +11,6 @@ rm -fr $TMP $TARGET
 mkdir -p $TMP $TARGET
 
 cd $WC_DIR/$MODULE
+chmod +x ./sbt
 ./sbt $JAVA_OPTS $OPENSHIFT_OPTS package
 cp target/scala*/*.war $TARGET/root.war
