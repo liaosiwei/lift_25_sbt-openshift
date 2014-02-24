@@ -8,8 +8,8 @@ cd $OPENSHIFT_DATA_DIR
 [ -f $JETTY_RUNNER ] || wget $JETTY_URL
 
 nohup java -jar $JETTY_RUNNER \
-  --port $OPENSHIFT_INTERNAL_PORT \
-  --host $OPENSHIFT_INTERNAL_IP \
+  --port $OPENSHIFT_DIY_PORT \
+  --host $OPENSHIFT_DIY_IP \
   --log $OPENSHIFT_DIY_LOG_DIR/request-yyyy_mm_dd.log \
   --out $OPENSHIFT_DIY_LOG_DIR/jetty-yyyy_mm_dd.log \
   --stats unsecure \
