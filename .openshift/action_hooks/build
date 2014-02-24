@@ -1,5 +1,5 @@
 #!/bin/bash
-MODULE=scala_210/lift_blank
+MODULE=scala_210/lift_basic
 WC_DIR=$OPENSHIFT_DATA_DIR/checkout
 TMP=$OPENSHIFT_DATA_DIR/tmp/sbt
 TARGET=$OPENSHIFT_DATA_DIR/target
